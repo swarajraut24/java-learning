@@ -1,0 +1,28 @@
+package com.tca.entities;
+
+ 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="student")
+public class Student {
+   
+	@Id
+	private Integer rno;
+	
+	private String name;
+	
+	@OneToMany(mappedBy="student",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	
+	List<StudentCourse> regs;
+	
+}

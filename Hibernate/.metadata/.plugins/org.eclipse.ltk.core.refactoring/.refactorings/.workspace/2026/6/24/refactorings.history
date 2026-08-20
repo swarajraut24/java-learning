@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy Project &apos;APP30-Named-query-Sql&apos;" description="Copy Project &apos;APP30-Named-query-Sql&apos;" destination="D:/java/Hibernate" element="/APP30-Named-query-Sql" flags="7" id="org.eclipse.ltk.core.refactoring.copyproject.resource" name="APP31-Compoenent-Mapping-Mysql" stamp="1781269395808"/>
+</session>

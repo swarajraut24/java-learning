@@ -1,0 +1,12 @@
+package com.tca.bean2;
+
+public class A {
+   
+//	 @Autowired
+     Static B ob;
+	
+	 
+	public A(B ob) {
+		B.ob=ob;
+	}
+}

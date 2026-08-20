@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk/jdk-21_windows-x64_bin/jdk-21.0.9/lib/jrt-fs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk/jdk-21_windows-x64_bin/jdk-21.0.9/lib/src.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

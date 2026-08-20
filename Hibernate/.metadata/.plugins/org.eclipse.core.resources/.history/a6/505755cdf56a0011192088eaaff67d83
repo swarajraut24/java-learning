@@ -1,0 +1,43 @@
+package com.tca.entities;
+
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="course")
+
+public class Course {
+public Integer getCid() {
+		return cid;
+	}
+
+	public void setCid(Integer cid) {
+		this.cid = cid;
+	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+
+@Id
+ private Integer cid;
+
+@ManyToMany(mappeddBy="courses",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+
+List<Student> students;
+
+
+ private String cname;
+ 
+ 
+}

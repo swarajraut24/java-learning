@@ -1,0 +1,68 @@
+ package controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import db.DBConnection;
+import model.User;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
+@WebServlet("/updateProfile")
+public class UpdateProfileServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+        // 1. Get the current session and user
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        
+        // Security check: if user isn't logged in, send to login page
+        if (user == null) {
+            response.sendRedirect("login.jsp");
+            return;
+        }
+
+        // 2. Retrieve the new weight and height from the dashboard form
+        String weightStr = request.getParameter("weight");
+        String heightStr = request.getParameter("height");
+
+        try {
+            double newWeight = Double.parseDouble(weightStr);
+            double newHeight = Double.parseDouble(heightStr);
+
+            // 3. Update the database
+            try (Connection con = DBConnection.getConnection()) {
+                String sql = "UPDATE users SET weight = ?, height = ? WHERE id = ?";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setDouble(1, newWeight);
+                ps.setDouble(2, newHeight);
+                ps.setInt(3, user.getId());
+
+                int result = ps.executeUpdate();
+
+                if (result > 0) {
+                    // 4. CRITICAL: Update the session user object so the UI reflects changes
+                    user.setWeight(newWeight);
+                    user.setHeight(newHeight);
+                    session.setAttribute("user", user);
+                    
+                    System.out.println("Profile updated successfully for: " + user.getName());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Optional: set an error message to display on the dashboard
+            request.setAttribute("error", "Failed to update profile. Please check your input.");
+        }
+
+        // 5. Redirect back to the dashboard servlet to refresh data
+        response.sendRedirect("dashboard");
+    }
+}

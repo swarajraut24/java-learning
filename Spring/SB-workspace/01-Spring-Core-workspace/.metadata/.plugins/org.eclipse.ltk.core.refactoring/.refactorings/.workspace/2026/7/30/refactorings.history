@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;com.tca&apos; to &apos;APP16-Singleton-prototype-scope&apos;&#x0D;&#x0A;- Original element: &apos;com.tca&apos;&#x0D;&#x0A;- Renamed element: &apos;com.tca&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename Java project &apos;com.tca&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=com.tca" name="APP16-Singleton-prototype-scope" references="true" stamp="1784712471534" version="1.0"/>
+</session>

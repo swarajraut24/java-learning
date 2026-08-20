@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CollegeLab-9/src/main/webapp/validate.jsp&apos; to &apos;valid.jsp&apos;" description="Rename resource &apos;validate.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/validate.jsp" name="valid.jsp" stamp="1773806778943" updateReferences="true"/>
+</session>

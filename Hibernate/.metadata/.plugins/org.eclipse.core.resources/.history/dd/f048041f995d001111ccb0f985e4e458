@@ -1,0 +1,224 @@
+package com.tca;
+
+ 
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+public class App {
+    public static void main(String[] args) {
+         
+    	Configuration configuration =null;
+    	SessionFactory sf=null;
+    	Session session =null;
+ 
+    	Transaction txn=null;
+    	
+    	
+    	try {
+    		configuration =new Configuration();
+    		configuration.configure();
+ 
+    		sf=configuration.buildSessionFactory();
+            session =sf.openSession();  
+ 
+            txn=session.beginTransaction();
+            
+            
+           // ADD 3 records into the table
+//            
+//             Student s1=new Student(101,"AAA",60.0,"PUNE");
+//             Student s2=new Student(102,"BBB",70.0,"MUMBAI");
+//             Student s3=new Student(103,"CCC",80.0,"DELHI");
+//             
+//             List<Student> studentList=new ArrayList<>();
+//             
+//             studentList.add(s1);
+//             studentList.add(s2);
+//             studentList.add(s3);
+//             
+//             for (Student s: studentList) {
+//            	 session.persist(s);
+//             }
+            
+//            List<Student> studentList = Arrays.asList(
+//            		new Student(101,"AAA",60.0,"PUNE"),
+//            		new Student(102,"BBB",70.0,"MUMBAI"),
+//            		new Student(103,"CCC",80.0,"DELHI")
+//            		);
+//            		
+//          for (Student s: studentList) {
+//         	 session.persist(s);
+//        }
+            
+            
+            // ----- fetch all students records with all field-----
+            
+            //SQL---->Select * from student;
+            
+//           Query<Student> query=session.createQuery("FROM Student",Student.class);
+//              
+//           List<Student> SL=query.list();
+//           
+//           for (Student s: SL) {
+//           	 System.out.println("rollno:"+s.getRoll());
+//        	 System.out.println("Name:"+s.getName());
+//        	 System.out.println("Per:"+s.getPer());
+//        	 System.out.println("City:"+s.getCity());
+//        	 System.out.println("------------------");
+//        	 
+//           	 
+//        }
+//            txn.commit();
+            
+            
+            
+        
+            //using select query 
+            
+            //sql-select * from student
+            
+//            SelectionQuery<Student> query=session.createSelectionQuery("FROM Student",Student.class);
+//            
+//            List<Student> SL=query.list();
+//            
+//            for (Student s: SL) {
+//            	 System.out.println("rollno:"+s.getRoll());
+//         	 System.out.println("Name:"+s.getName());
+//         	 System.out.println("Per:"+s.getPer());
+//         	 System.out.println("City:"+s.getCity());
+//         	 System.out.println("------------------");
+//         	 
+//            	 
+//         }
+//             txn.commit();
+            
+            
+          //use mututationquery for insert,delete,update
+            
+            
+           //for delete using mututationquery
+            
+//            MutationQuery query=session.createMutationQuery("delete from Student where roll=110");
+//            
+//            int noofrecords=query.executeUpdate();
+//            
+//            System.out.println("no of records deleted:"+noofrecords);
+//            
+//            txn.commit();
+//                
+//     	   System.out.println("Done...");
+     		   
+    	
+     	   // for update
+            
+//      MutationQuery query=session.createMutationQuery("update Student set city='POONA' where city='PUNE'");
+//            
+//            int noofrecords=query.executeUpdate();
+//            
+//            System.out.println("no of records updated:"+noofrecords);
+//            
+//            txn.commit();
+//                
+//     	   System.out.println("Done...");
+     	   
+     	   
+     	   //for selection count(*) from student;
+     	   
+//     	  SelectionQuery<Long> query=session.createSelectionQuery("select count(*) from Student",Long.class);
+//     	  
+//           Long cnt=query.getResultCount();
+//           
+//           System.out.println("no of records:"+cnt);
+//           
+//           txn.commit();
+//           
+//     	   System.out.println("Done...");
+     	   
+     	   //for maximum percentage
+     	   
+//            SelectionQuery<Double> query=session.createSelectionQuery("select max(per) from Student",Double.class);
+//       	  
+//            Double maxper=query.getSingleResult();
+//            
+//            System.out.println("maximum percentage:"+maxper);
+            
+            
+            //test code:- displaying all records for specific columns  
+            
+            
+//            Query<Object[]> query=session.createQuery("Select name,city  FROM Student",Object[].class);
+//            
+//            List<Object[]> list = query.getResultList();
+//            
+//            for(Object[] ob: list) {
+//            	
+//            	for(Object data: ob) {
+//            		System.out.print(data+" ");
+//            	}
+//              System.out.println();
+//            }
+//            
+//            txn.commit();
+            
+            //test code for aggreate function: avg(),max(),min(),sum()
+            
+//            Query<Long> q1=session.createQuery("select count(*) from Student",Long.class);
+//            
+//            Long nooffreq=q1.getSingleResult();
+//            
+//            System.out.println("total number of students:"+nooffreq);
+//            
+//            
+//            Query<Double> q2=session.createQuery("select max(per) from Student",Double.class);
+//            
+//             Double m=q2.getSingleResult();
+//            
+//            System.out.println("maximum percentage:"+m);
+            
+            
+            // to frequency of city
+            
+            Query<Object[]> qs=session.createQuery("Select name,city from Student GROUP BY",Object[].class);
+            
+            List<Object[]> l1=qs.getResultList();
+            
+            for(Object[] s:l1) {
+            	
+            	for(int i=0;i<s.length;i++) {
+            		System.out.print(s[i]+":");
+            	}
+            	System.out.println();
+            	
+            }
+            
+      	   System.out.println("Done...");
+     	   
+           txn.commit();
+    
+    	}
+    	catch(Exception e) {
+    		if(txn!=null) {
+    		txn.rollback();
+    		
+    		}
+    		e.printStackTrace();
+    	}
+    	
+    	finally {
+    		if(session !=null) {
+    			session.close();
+    		}
+    		if(sf!=null) {
+    			sf.close();
+    		}
+    	}
+    }
+}
+
+
+ 

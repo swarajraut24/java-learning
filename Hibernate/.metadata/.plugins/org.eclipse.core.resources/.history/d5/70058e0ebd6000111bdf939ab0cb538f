@@ -1,0 +1,118 @@
+package com.tca;
+
+ 
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import com.tca.entities.Student;
+
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
+
+public class App {
+    public static void main(String[] args) {
+         
+    	Configuration configuration =null;
+    	SessionFactory sf=null;
+    	Session session =null;
+ 
+    	Transaction txn=null;
+    	
+    	
+    	try {
+    		configuration =new Configuration();
+    		configuration.configure();
+ 
+    		sf=configuration.buildSessionFactory();
+            session =sf.openSession();  
+ 
+            txn=session.beginTransaction(); 
+           
+            
+            //to print all records order by descending
+            
+//            CriteriaBuilder cb=session.getCriteriaBuilder();
+//            CriteriaQuery<Student>cq=cb.createQuery(Student.class);
+//            Root<Student> root=cq.from(Student.class);
+//            
+//            cq.select(root).orderBy(cb.desc(root.get("per")));
+//            
+//            
+//            Query<Student>query=session.createQuery(cq);
+//            List<Student> student=query.getResultList();
+//            
+//            
+//          for(Student m:student) {
+//          	System.out.println("roll no:"+m.getRoll());
+//          	System.out.println("Per:"+m.getPer());
+//          	System.out.println("Name:"+m.getName());
+//          	System.out.println("City:"+m.getCity());
+//          	System.out.println("---------------------");
+//          	
+//          }
+            
+            
+            //where with multiple conditions(AND)
+            
+            //select * from student where per>=70 and per<=90
+            
+            CriteriaBuilder cb=session.getCriteriaBuilder();
+            CriteriaQuery<Student> cq=cb.createQuery(Student.class);
+            Root<Student> root=cq.from(Student.class);
+            
+            Predicate p1=cb.ge(root.get("per"),70.0);  //per>=70
+            Predicate p2=cb.le(root.get("per"),90.0);   //per<=90
+            
+            cq.root.get("name").where(cb.and(p1,p2));
+            		
+            Query<Student>query=session.createQuery(cq);
+            List<Student> student=query.getResultList();
+          
+          
+        for(Student m:student) {
+        	System.out.println("roll no:"+m.getRoll());
+        	System.out.println("Per:"+m.getPer());
+        	System.out.println("Name:"+m.getName());
+        	System.out.println("City:"+m.getCity());
+        	System.out.println("---------------------");
+        	
+        }
+          
+            		
+            		
+            
+            
+            
+      	   System.out.println("Done...");
+     	   
+           txn.commit();
+    
+    	}
+    	catch(Exception e) {
+    		if(txn!=null) {
+    		txn.rollback();
+    		
+    		}
+    		e.printStackTrace();
+    	}
+    	
+    	finally {
+    		if(session !=null) {
+    			session.close();
+    		}
+    		if(sf!=null) {
+    			sf.close();
+    		}
+    	}
+    }
+}
+
+
+ 

@@ -1,0 +1,11 @@
+package com.tca.beans;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Greetbean {
+
+	public  void printmessage() {
+		System.out.println("good morning");
+	}
+}

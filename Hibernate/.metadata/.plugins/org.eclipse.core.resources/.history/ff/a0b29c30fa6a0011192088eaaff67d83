@@ -1,0 +1,109 @@
+package com.tca;
+
+ 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.tca.entities.Course;
+import com.tca.entities.Student;
+ 
+ 
+
+public class App {
+    public static void main(String[] args) {
+         
+    	Configuration configuration =null;
+    	SessionFactory sf=null;
+    	Session session =null;
+ 
+    	Transaction txn=null;
+    	
+    	
+    	try {
+    		configuration =new Configuration();
+    		configuration.configure();
+ 
+    		sf=configuration.buildSessionFactory();
+            session =sf.openSession();  
+ 
+            txn=session.beginTransaction(); 
+        
+           //save student with some courses
+            
+       /*     Course c1=new Course();
+            
+            c1.setCid(111);
+            c1.setCname("Core java");
+            
+            Course c2=new Course();
+           
+            c2.setCid(222);
+            c2.setCname("Advance java");
+            
+               List<Course> courses=new ArrayList<>();
+          courses.add(c1);
+            courses.add(c2);
+            
+                        Student s= new Student();
+            s.setRno(101);
+            s.setName("AAA");
+            s.setCourses(courses);
+            
+            session.persist(s);
+            
+            */
+            
+            
+            // save courses with students
+            
+          
+        Student s1=new Student();
+            s1.setRno(102);
+            s1.setName("BBB");
+            
+            
+            List<Student> s=new ArrayList<>();
+            s.add(s1);
+        
+            
+            Course c1= new Course();
+            c1.setCid(333);
+            c1.setCname("Spring boot");
+
+          c1.setStudents(s);
+          
+          
+          session.persist(c1);
+            
+            txn.commit();
+            
+      	   System.out.println("Done...");
+     	   
+    
+    	}
+    	catch(Exception e) {
+    		if(txn!=null) {
+    		txn.rollback();
+    		
+    		}
+    		e.printStackTrace();
+    	}
+    	
+    	finally {
+    		if(session !=null) {
+    			session.close();
+    		}
+    		if(sf!=null) {
+    			sf.close();
+    		}
+    	}
+    }
+}
+
+
+ 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ASS11-Visited-Counted-App/src/main/webapp/visisted.jsp&apos; to &apos;visited.jsp&apos;" description="Rename resource &apos;visisted.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/visisted.jsp" name="visited.jsp" stamp="1772440403595" updateReferences="true"/>
+</session>

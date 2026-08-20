@@ -1,0 +1,17 @@
+package com.tca.entities;
+
+ 
+
+import jakartas.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="student")
+public class Student {
+
+	
+	 @Id
+	 private Integer rno;
+	 private String name;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       <bean id="adr" class="com.tca.APP03_constructor_refer_injection.Address">
+       
+       <constructor-arg name="city" value="Barshi"></constructor-arg>
+       <constructor-arg name="pincode" value="413401"></constructor-arg>
+       
+       </bean>
+       
+       
+       <bean id="crt" class="com.tca.APP03_constructor_refer_injection.Customer">
+       
+       <constructor-arg name="customerid" value="101"></constructor-arg>
+       <constructor-arg name="customername" value="AAA"></constructor-arg>
+       <constructor-arg name="adress" ref="adr"></constructor-arg>
+       
+       </bean>
+       
+</beans>     

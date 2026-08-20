@@ -1,0 +1,22 @@
+package com.project;
+
+public class Snippet {
+	public static void main(String[] args) {
+		│
+		├── src
+		│   └── com.project
+		│        ├── dao
+		│        │     └── UserDao.java
+		│        │
+		│        ├── servlet
+		│        │     └── RegisterServlet.java
+		│        │     └── LoginServlet.java
+		│        │
+		│        ├── entities
+		│        │     └── User.java
+		│        │
+		│        └── db
+		│              └── DBConnection.java
+	}
+}
+

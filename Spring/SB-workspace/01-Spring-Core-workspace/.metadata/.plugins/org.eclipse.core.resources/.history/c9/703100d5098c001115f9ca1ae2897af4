@@ -1,0 +1,11 @@
+package com.tca.welcome;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class WelcomeBean {
+   
+	void printmessage() {
+		System.out.println("welcome bean");
+	}
+}

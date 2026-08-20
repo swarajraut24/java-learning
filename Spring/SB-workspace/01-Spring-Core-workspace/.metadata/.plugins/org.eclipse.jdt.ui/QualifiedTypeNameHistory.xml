@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="com.tca.config.AppConfig"/>
+    <fullyQualifiedTypeName name="com.tca.service.Studentservice"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="APP16.com.tca.bean.ServiceA"/>
+    <fullyQualifiedTypeName name="com.tca.welcome.WelcomeBean"/>
+    <fullyQualifiedTypeName name="com.tca.beans.Greetbean"/>
+</qualifiedTypeNameHistroy>

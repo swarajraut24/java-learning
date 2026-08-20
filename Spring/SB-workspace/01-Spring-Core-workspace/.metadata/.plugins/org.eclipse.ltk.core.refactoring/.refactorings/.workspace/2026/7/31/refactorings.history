@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Copy Project &apos;APP11-autowired&apos;" description="Copy Project &apos;APP11-autowired&apos;" destination="D:/java/Spring/SB-workspace/01-Spring-Core-workspace" element="/APP11-autowired" flags="7" id="org.eclipse.ltk.core.refactoring.copyproject.resource" name="APP18-Interview-question" stamp="1785495833357"/>&#x0A;<refactoring comment="Delete resource &apos;APP18-Interview-question&apos;" deleteContents="false" description="Delete resource &apos;APP18-Interview-question&apos;" element1="/APP18-Interview-question" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1785495935830"/>
+</session>

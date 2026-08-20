@@ -1,0 +1,22 @@
+package com.tca.entities;
+
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="course")
+
+public class Course {
+	
+	@Id
+	private Integer cid;
+	
+	private String cname;
+	
+ @OneToMany(mappedBy="course")
+ List<StudentCourse> regs;
+}

@@ -1,0 +1,41 @@
+INDEX VERSION 1.134
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2354497555.index
+\APP-Student-Mgmt-System\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\682482065.index
+\ASS13-TAG-LIB-DIRECTIVE\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3465313229.index
+\CollegeLab-9\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3035995084.index
+\lab-9\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\135153688.index
+\CollegeLab-6\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4063201150.index
+\FoodAnalyzer\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\273472173.index
+\FoodAnalyzer\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3898423030.index
+\collegelab-8\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\736970757.index
+\CollegeLab-7\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3538998114.index
+\ESE-Mock\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4003625016.index
+\ASS10-Marksheet-jsp-APP\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1466077842.index
+\CollegeLab-7\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\834072563.index
+\ASS11-Visited-Counted-App\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3788936644.index
+\ESE-EXAM\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1083114031.index
+\lab\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2303279433.index
+\ASS12-INCLUDE-DIRECTIVE\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3276164946.index
+\colloegelab-8\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2410185563.index
+\CollegeLab-7\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2704645454.index
+\ASS09-JSP-LOGIN_FORM\src\main\java
+D:\java\Advanced  java\Sourcecodes\Servletcodes\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3408773567.index
+\ASS07-FIRST-JSP-APP\src\main\java

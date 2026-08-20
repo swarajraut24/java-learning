@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.tca.APP03_HIB_postgrs&apos; to &apos;com.tca&apos;&#x0D;&#x0A;- Original project: &apos;APP03-HIB-postgrs&apos;&#x0D;&#x0A;- Original element: &apos;APP03-HIB-postgrs/src/main/java/com.tca.APP03_HIB_postgrs&apos;&#x0D;&#x0A;- Renamed element: &apos;APP03-HIB-postgrs/src/main/java/com.tca&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.tca.APP03_HIB_postgrs&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.tca.APP03_HIB_postgrs" name="com.tca" qualified="false" references="true" stamp="1777023536691" textual="false" version="1.0"/>
+</session>

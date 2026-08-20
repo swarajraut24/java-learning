@@ -1,0 +1,23 @@
+<web-app>
+
+<servlet>
+    <servlet-name>ChatServlet</servlet-name>
+    <servlet-class>com.servelet.ChatServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>ChatServlet</servlet-name>
+    <url-pattern>/ChatServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>FetchServlet</servlet-name>
+    <servlet-class>com.servelet.FetchServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>FetchServlet</servlet-name>
+    <url-pattern>/FetchServlet</url-pattern>
+</servlet-mapping>
+
+</web-app>

@@ -1,0 +1,99 @@
+package com.tca;
+
+ 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.tca.entities.Car;
+import com.tca.entities.Engine;
+
+ 
+ 
+ 
+
+public class App {
+    public static void main(String[] args) {
+         
+    	Configuration configuration =null;
+    	SessionFactory sf=null;
+    	Session session =null;
+ 
+    	Transaction txn=null;
+    	
+    	
+    	try {
+    		configuration =new Configuration();
+    		configuration.configure();
+ 
+    		sf=configuration.buildSessionFactory();
+            session =sf.openSession();  
+ 
+            txn=session.beginTransaction(); 
+            
+         /*   Engine e= new Engine();
+            e.setEid(1234);
+            e.setType("Pertrol");
+            e.setSize("1200cc");
+            
+            Car c=new Car();
+            c.setCno("MH14AB1234");
+            c.setCname("swift");
+            c.setEngine(e);
+           
+            session.persist(c);
+            
+            */
+            
+            //generate unique key violation
+            
+            /*  Engine e=session.get(Engine.class,1234);
+              
+              Car a = new Car();
+              a.setCname("Bajaj");
+              a.setCno("MH122436");
+              a.setEngine(e);
+              
+              session.persist(a);
+              */
+            
+            //fetch car details with engine details
+            
+            Car c= session.get(Car.class,"MH14AB1234");
+            
+            Engine e=c.getEngine();
+            
+            System.out.println("Car number: "+ c.getCno());
+            System.out.println("Car name: "+c.getCname());
+            System.out.println("Enigne ID: "+e.getEid());
+            System.out.println("Enigne type: "+e.getType());
+            System.out.println("Enigne size: "+e.getSize());
+                
+            txn.commit();
+            
+      	   System.out.println("Done...");
+     	   
+    
+    	}
+    	catch(Exception e) {
+    		if(txn!=null) {
+    		txn.rollback();
+    		
+    		}
+    		e.printStackTrace();
+    	}
+    	
+    	finally {
+    		if(session !=null) {
+    			session.close();
+    		}
+    		if(sf!=null) {
+    			sf.close();
+    		}
+    	}
+    }
+}
+
+
+ 

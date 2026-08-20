@@ -1,0 +1,15 @@
+package com.tca.bean2;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class A {
+   
+//	 @Autowired
+	final B ob;
+	
+	 
+	@Autowired
+	public A(B ob) {
+		this.ob=ob;
+	}
+}

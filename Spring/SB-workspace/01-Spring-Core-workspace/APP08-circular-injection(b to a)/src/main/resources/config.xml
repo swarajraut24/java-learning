@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
+       
+       
+                 <bean id="sb" class="com.tca.APP08.ServiceB">
+            <property name="serviceA" ref="sa"/>
+                   </bean>
+                   
+        <bean id="sa" class="com.tca.APP08.ServiceA">
+          <constructor-arg name="serviceB" ref="sb"></constructor-arg>
+       </bean>
+       
+       
+            
+</beans>     

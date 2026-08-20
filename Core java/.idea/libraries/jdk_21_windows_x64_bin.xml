@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jdk-21_windows-x64_bin">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk/jdk-21_windows-x64_bin.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,12 @@
+package com.tca.bean2;
+
+public class A {
+   
+//	 @Autowired
+     final B ob;
+	
+	 
+	public A(B ob) {
+		this.ob=ob;
+	}
+}
